@@ -8,25 +8,25 @@ public class Main {
     public static void main(String[] args) {
 //        List<Club>list = ReadAndWriteFile.readFile();
 //        ListClub listClub = new ListClub(list);
-        ListClub listClub =new ListClub();
+        ListClub listClub = new ListClub();
         ListFootballPlayer listFootballFlayer = new ListFootballPlayer(listClub);
         ListMatch listMatch = new ListMatch();
         WriteFile w = new WriteFile();
         Scanner sc = new Scanner(System.in);
         int input;
         do {
-            System.out.println("Menu :");
-            System.out.println("1: Thêm clb");
-            System.out.println("2: Thêm cầu thủ");
-            System.out.println("3: Thêm trận đấu");
-            System.out.println("4: Hiển thị thông tin");
-            System.out.println("5: Xóa clb");
-            System.out.println("6: Sửa  clb");
-            System.out.println("7: Tìm kiếm");
-            System.out.println("8: Lưu thông tin vào file");
-            System.out.println("9: Bảng xếp hạng");
-            System.out.println("0: Thoát");
-            System.out.println("---------------");
+            System.out.println("------------Menu--------------                                            ");
+            System.out.println("1: Thêm clb                   |                                           ");
+            System.out.println("2: Thêm cầu thủ               |            ^                ^                  ");
+            System.out.println("3: Thêm trận đấu              |         ^  @  ^          ^  @  ^                  ");
+            System.out.println("4: Hiển thị thông tin         |                     ^                      ");
+            System.out.println("5: Xóa clb                    |                    ^ ^                      ");
+            System.out.println("6: Sửa  clb                   |             ^              ^                 ");
+            System.out.println("7: Tìm kiếm                   |               ^         ^                     ");
+            System.out.println("8: Sắp xếp                    |                   ^  ^                         ");
+            System.out.println("9: Lưu thông tin vào file     |                                           ");
+            System.out.println("0: Thoát                      |                                           ");
+            System.out.println("-------------------------------");
             System.out.println("Mời chọn: ");
             input = Integer.parseInt(sc.nextLine());
             switch (input) {
@@ -73,12 +73,14 @@ public class Main {
                     break;
                 case 5:
                     listClub.deleteCulb();
+                    listClub.showClub();
                     break;
                 case 6:
                     listClub.repairClub();
+                    listClub.showClub();
                     break;
                 case 7:
-                    int i1 ;
+                    int i1;
                     do {
                         System.out.println("Bạn muốn tìm ?");
                         System.out.println("1: Câu lạc bộ");
@@ -86,7 +88,7 @@ public class Main {
                         System.out.println("3: Trận đấu");
                         System.out.println("0: Quay lại");
                         i1 = Integer.parseInt(sc.nextLine());
-                        switch (i1){
+                        switch (i1) {
                             case 1:
                                 listClub.searchClub();
                                 break;
@@ -97,19 +99,17 @@ public class Main {
                                 listMatch.searchMatch();
                                 break;
                         }
-                    }while (i1 != 0);
+                    } while (i1 != 0);
+
                 case 8:
-                    w.writeFile(listClub,listFootballFlayer,listMatch);
-                    break;
-                case 9:
                     int a;
                     do {
                         System.out.println("Bạn muốn sắp xếp ?");
                         System.out.println("1: Câu lạc bộ");
                         System.out.println("2: Cầu thủ");
                         System.out.println("0: Exit");
-                        a=Integer.parseInt(sc.nextLine());
-                        switch (a){
+                        a = Integer.parseInt(sc.nextLine());
+                        switch (a) {
                             case 1:
                                 listClub.sortClub();
                                 listClub.showClub();
@@ -121,8 +121,8 @@ public class Main {
                                     System.out.println("1: Số áo");
                                     System.out.println("2: Tên");
                                     System.out.println("0: Exit");
-                                    b=Integer.parseInt(sc.nextLine());
-                                    switch (b){
+                                    b = Integer.parseInt(sc.nextLine());
+                                    switch (b) {
                                         case 1:
                                             listFootballFlayer.sortFootballPlayer();
                                             listFootballFlayer.showFootballFlayer();
@@ -132,11 +132,16 @@ public class Main {
                                             listFootballFlayer.showFootballFlayer();
                                             break;
                                     }
-                                }while (b != 0);
+                                } while (b != 0);
                         }
-                    }while (a != 0);
+                    } while (a != 0);
+                case 9:
+                    w.writeFile(listClub, listFootballFlayer, listMatch);
+                    break;
             }
+
         }
+
         while (input != 0);
         System.out.println("Bye bye");
     }

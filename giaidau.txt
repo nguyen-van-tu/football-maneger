@@ -1,20 +1,29 @@
 ------Thông tin câu lạc bộ-------
  Tên clb: Barcalona, Mã clb: FCB, Quốc gia: Tây Ban Nha, Sân nhà: CampNou, Huấn luận viên: Koeman
  Tên clb: Bayern Munich, Mã clb: BAY, Quốc gia: Đức, Sân nhà: Allianz, Huấn luận viên: Hans-Dieter Flick
- Tên clb: Liverpool, Mã clb: LIV, Quốc gia: Anh, Sân nhà: Anfield, Huấn luận viên: Jürgen Klopp
  Tên clb: Juventus, Mã clb: JUV, Quốc gia: Italy, Sân nhà: Juventus, Huấn luận viên: Andrea Pirlo
+ Tên clb: MCITY, Mã clb: MCI, Quốc gia: ANH, Sân nhà: ÁD, Huấn luận viên: ÁDF
  Tên clb: Paris Saint-Germain, Mã clb: PSG, Quốc gia: Pháp, Sân nhà: CV các Hoàng tử, Huấn luận viên: Mauricio Pochettino
 
 ------Thông tin cầu thủ-------
-Cầu thủ: Messi',  Năm sinh: 1987,  Quốc tịch: Argentina,  Câu lạc bộ: Barcalona',  Vị trí :Tiền đạo',  Số áo :10
+Cầu thủ: BRUNO',  Năm sinh: 1993,  Quốc tịch: BĐN,  Câu lạc bộ: MU',  Vị trí :TIỀN VỆ',  Số áo :34
 Cầu thủ: De Jong',  Năm sinh: 1997,  Quốc tịch: Hà lan,  Câu lạc bộ: Barcalona',  Vị trí :Tiền vệ',  Số áo :21
-Cầu thủ: Lewandowski',  Năm sinh: 1988,  Quốc tịch: Ba lan,  Câu lạc bộ: Bayern Munich',  Vị trí :Tiền đạo',  Số áo :9
-Cầu thủ: Thomas Müller',  Năm sinh: 1989,  Quốc tịch: Đức,  Câu lạc bộ: Bayern Munich',  Vị trí :Tiền đạo',  Số áo :25
-Cầu thủ: Salah',  Năm sinh: 1992,  Quốc tịch: Ai cập,  Câu lạc bộ: Liverpool',  Vị trí :Tiền đạo',  Số áo :11
-Cầu thủ: van Dijk',  Năm sinh: 1991,  Quốc tịch: Hà lan,  Câu lạc bộ: Liverpool',  Vị trí :Hậu vệ',  Số áo :4
 Cầu thủ: Dybala',  Năm sinh: 1993,  Quốc tịch: Argentina,  Câu lạc bộ: Juventus',  Vị trí :Tiền đạo',  Số áo :10
-Cầu thủ: Ronaldo',  Năm sinh: 1985,  Quốc tịch: Bồ đào nha,  Câu lạc bộ: Juventus',  Vị trí :Tiền đạo',  Số áo :7
+Cầu thủ: Lewandowski',  Năm sinh: 1988,  Quốc tịch: Ba lan,  Câu lạc bộ: Bayern Munich',  Vị trí :Tiền đạo',  Số áo :9
+Cầu thủ: Messi',  Năm sinh: 1987,  Quốc tịch: Argentina,  Câu lạc bộ: Barcalona',  Vị trí :Tiền đạo',  Số áo :10
 Cầu thủ: Neymar Jr',  Năm sinh: 1992,  Quốc tịch: Brazil,  Câu lạc bộ: Paris Saint-Germain',  Vị trí :Tiền đạo',  Số áo :10
+Cầu thủ: Ronaldo',  Năm sinh: 1985,  Quốc tịch: Bồ đào nha,  Câu lạc bộ: Juventus',  Vị trí :Tiền đạo',  Số áo :7
+Cầu thủ: Salah',  Năm sinh: 1992,  Quốc tịch: Ai cập,  Câu lạc bộ: MCITY',  Vị trí :Tiền đạo',  Số áo :11
+Cầu thủ: Thomas Müller',  Năm sinh: 1989,  Quốc tịch: Đức,  Câu lạc bộ: Bayern Munich',  Vị trí :Tiền đạo',  Số áo :25
 Cầu thủ: Verratti',  Năm sinh: 1992,  Quốc tịch: Italy,  Câu lạc bộ: Paris Saint-Germain',  Vị trí :Tiền vệ',  Số áo :6
+Cầu thủ: van Dijk',  Năm sinh: 1991,  Quốc tịch: Hà lan,  Câu lạc bộ: MCITY',  Vị trí :Hậu vệ',  Số áo :4
 
 ------Thông tin trận đấu-------
+Mã trận đấu: 123
+Câu lạc bộ 1: Barcalona
+Câu lạc bộ 2: MCITY
+Sân vận động: CAMPNOU
+Tỉ số trận đấu: Barcalona 3-1 MCITY
+Cầu thủ ghi bàn cho Barcalona: Messi,De Jong,Messi,(34)
+Cầu thủ ghi bàn cho MCITY: van Dijk,(34)
+

@@ -1,8 +1,6 @@
 package controller;
-
 import model.Club;
 import model.FootballPlayer;
-
 import java.util.Comparator;
 
 public class SortFootball implements Comparator<FootballPlayer> {

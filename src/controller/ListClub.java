@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 public class ListClub {
     Scanner sc = new Scanner(System.in);
-    public ArrayList<Club> clubArrayList = new ArrayList<>();
+    public ArrayList<Club> clubArrayList;
 //
 //    public ListClub() {
 //        clubArrayList = new ArrayList<>();
@@ -36,7 +36,7 @@ public class ListClub {
         System.out.print("Nhập tên clb: ");
         club.setName(sc.nextLine());
 
-        boolean check= false;
+        boolean checkID= false;
         do {
             System.out.print("Nhập mã clb: ");
             String id = sc.nextLine();
@@ -45,9 +45,9 @@ public class ListClub {
             Matcher matcher = pattern.matcher(id);
             if (matcher.find()){
                 club.setClubCode(id);
-                check = true;
+                checkID = true;
             }
-        }while (check == false);
+        }while (!checkID);
 
         System.out.print("Nhập tên quốc gia: ");
         club.setNation(sc.nextLine());
