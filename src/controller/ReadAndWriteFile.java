@@ -1,4 +1,4 @@
-package mannager;
+package controller;
 
 import model.Club;
 

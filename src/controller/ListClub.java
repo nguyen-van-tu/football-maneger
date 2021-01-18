@@ -1,10 +1,9 @@
-package mannager;
+package controller;
 
 import model.Club;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -161,6 +160,11 @@ public class ListClub {
         if (a == 0) {
             System.out.println("Không thấy clb bạn tìm !");
         }
+    }
+
+    public void sortClub(){
+        clubArrayList.sort(new SortFootball.SortClub());
+        System.out.println("Sắp xếp thành công");
     }
 }
 

@@ -1,8 +1,7 @@
 package view;
 
-import mannager.*;
-import model.Club;
-import java.util.List;
+import controller.*;
+
 import java.util.Scanner;
 
 public class Main {
@@ -13,7 +12,6 @@ public class Main {
         ListFootballPlayer listFootballFlayer = new ListFootballPlayer(listClub);
         ListMatch listMatch = new ListMatch();
         WriteFile w = new WriteFile();
-        FootballRanking footballRanking = new FootballRanking();
         Scanner sc = new Scanner(System.in);
         int input;
         do {
@@ -104,7 +102,39 @@ public class Main {
                     w.writeFile(listClub,listFootballFlayer,listMatch);
                     break;
                 case 9:
-//                    System.out.println(footballRanking.getPoint());
+                    int a;
+                    do {
+                        System.out.println("Bạn muốn sắp xếp ?");
+                        System.out.println("1: Câu lạc bộ");
+                        System.out.println("2: Cầu thủ");
+                        System.out.println("0: Exit");
+                        a=Integer.parseInt(sc.nextLine());
+                        switch (a){
+                            case 1:
+                                listClub.sortClub();
+                                listClub.showClub();
+                                break;
+                            case 2:
+                                int b;
+                                do {
+                                    System.out.println("Sắp xếp theo ?");
+                                    System.out.println("1: Số áo");
+                                    System.out.println("2: Tên");
+                                    System.out.println("0: Exit");
+                                    b=Integer.parseInt(sc.nextLine());
+                                    switch (b){
+                                        case 1:
+                                            listFootballFlayer.sortFootballPlayer();
+                                            listFootballFlayer.showFootballFlayer();
+                                            break;
+                                        case 2:
+                                            listFootballFlayer.sortFootballPlayerName();
+                                            listFootballFlayer.showFootballFlayer();
+                                            break;
+                                    }
+                                }while (b != 0);
+                        }
+                    }while (a != 0);
             }
         }
         while (input != 0);

@@ -1,6 +1,6 @@
 package model;
 
-import mannager.ListFootballPlayer;
+import controller.ListFootballPlayer;
 
 public class Match {
     private String matchID;

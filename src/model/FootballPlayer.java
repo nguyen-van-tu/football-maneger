@@ -1,7 +1,5 @@
 package model;
 
-import mannager.ListFootballPlayer;
-
 
 public class FootballPlayer  {
     private String name ;
