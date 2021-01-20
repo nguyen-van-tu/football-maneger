@@ -61,11 +61,7 @@ public class ListMatch {
                 match1 = listFootballPlayer.findByNumber(num1);
             } while (match1 == null);
             scorePlayer1.footballPlayerArrayList.add(match1);
-
-            System.out.println("Nhập phút");
-            int p = Integer.parseInt(sc.nextLine());
-            m.setMinutes(p);
-        }
+}
         m.setScorePlayer1(scorePlayer1);
 
         ListFootballPlayer scorePlayer2 = new ListFootballPlayer();
@@ -78,9 +74,6 @@ public class ListMatch {
             } while (match2 == null);
             scorePlayer2.footballPlayerArrayList.add(match2);
 
-            System.out.println("Nhập phút");
-            int p = Integer.parseInt(sc.nextLine());
-            m.setMinutes(p);
         }
         m.setScorePlayer2(scorePlayer2);
 
@@ -111,19 +104,5 @@ public class ListMatch {
         }
     }
 
-    public int getNumWin() {
-        for (Match match : matchArrayList) {
-            int point = 0;
-            if (match.getNumOfGoalTeam1() > match.getNumOfGoalTeam2()){
-                return point + 3;
-            }else if (match.getNumOfGoalTeam1() < match.getNumOfGoalTeam2()){
-                return point -3;
-            }else {
-                return point +1;
-            }
-
-        }
-        return -1;
-    }
 }
 

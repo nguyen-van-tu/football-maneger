@@ -6,8 +6,8 @@ import java.util.Comparator;
 public class SortFootball implements Comparator<FootballPlayer> {
 
     @Override
-    public int compare(FootballPlayer o1, FootballPlayer o2) {
-        if (o1.getNumber() > o2.getNumber()) {
+    public int compare(FootballPlayer f1, FootballPlayer f2) {
+        if (f1.getNumber() > f2.getNumber()) {
             return 1;
         }
         return -1;
@@ -16,8 +16,8 @@ public class SortFootball implements Comparator<FootballPlayer> {
     public static class SortFootballName implements Comparator<FootballPlayer> {
 
         @Override
-        public int compare(FootballPlayer o1, FootballPlayer o2) {
-            return (o1.getName().compareTo(o2.getName()));
+        public int compare(FootballPlayer f1, FootballPlayer f2) {
+            return (f1.getName().compareTo(f2.getName()));
         }
     }
 

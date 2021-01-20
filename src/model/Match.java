@@ -11,7 +11,6 @@ public class Match {
     private int numOfGoalTeam2;
     private ListFootballPlayer scorePlayer1;
     private ListFootballPlayer scorePlayer2;
-    private int minutes;
 
 
     public Match() {
@@ -69,20 +68,16 @@ public class Match {
         return numOfGoalTeam2;
     }
 
-    public void setMinutes(int minutes) {
-        this.minutes = minutes;
-    }
-
     @Override
     public String toString() {
         return
-                "Mã trận đấu: " + matchID+ '\n' +
-                "Câu lạc bộ 1: " + getClub1().getName() + '\n' +
+                "Mã trận đấu: " + matchID + '\n' +
+                        "Câu lạc bộ 1: " + getClub1().getName() + '\n' +
                         "Câu lạc bộ 2: " + getClub2().getName() + '\n' +
                         "Sân vận động: " + stadium + '\n' +
                         "Tỉ số trận đấu: " + getClub1().getName() + " " + numOfGoalTeam1 + "-" + numOfGoalTeam2 + " " + getClub2().getName() + '\n' +
-                        "Cầu thủ ghi bàn cho "+ getClub1().getName() +": "+ (scorePlayer1.getName() + "(" +minutes+")")+'\n' +
-                        "Cầu thủ ghi bàn cho "+ getClub2().getName() +": "+ scorePlayer2.getName() +  "(" +minutes+")"+'\n'
+                        "Cầu thủ ghi bàn cho " + getClub1().getName() + ": " + (scorePlayer1.getName()) + '\n' +
+                        "Cầu thủ ghi bàn cho " + getClub2().getName() + ": " + scorePlayer2.getName() + '\n'
                 ;
     }
 }
