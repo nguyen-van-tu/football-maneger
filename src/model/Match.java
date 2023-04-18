@@ -72,8 +72,8 @@ public class Match {
     public String toString() {
         return
                 "Mã trận đấu: " + matchID + '\n' +
-                        "Câu lạc bộ 1: " + getClub1().getName() + '\n' +
-                        "Câu lạc bộ 2: " + getClub2().getName() + '\n' +
+                        "Chủ nhà: " + getClub1().getName() + '\n' +
+                        "Đội khách: " + getClub2().getName() + '\n' +
                         "Sân vận động: " + stadium + '\n' +
                         "Tỉ số trận đấu: " + getClub1().getName() + " " + numOfGoalTeam1 + "-" + numOfGoalTeam2 + " " + getClub2().getName() + '\n' +
                         "Cầu thủ ghi bàn cho " + getClub1().getName() + ": " + (scorePlayer1.getName()) + '\n' +

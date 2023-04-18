@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class ListFootballPlayer {
     Scanner sc = new Scanner(System.in);
     public ArrayList<FootballPlayer> footballPlayerArrayList = new ArrayList<>();
-
+    ListClub listClub = new ListClub();
     public ListFootballPlayer() {
     }
 
@@ -50,9 +50,10 @@ public class ListFootballPlayer {
         f.setNationality(qt);
 
         Club club;
+        String clubCode1 ;
         do {
             System.out.print("Nhập mã clb:");
-            String clubCode1 = sc.nextLine();
+            clubCode1 = sc.nextLine();
             club = listClub.findByCode(clubCode1);
         } while (club == null);
         f.setClub(club);
@@ -61,8 +62,13 @@ public class ListFootballPlayer {
         String hlv = sc.nextLine();
         f.setLocation(hlv);
 
-        System.out.print("Nhập số áo: ");
-        int sa = Integer.parseInt(sc.nextLine());
+        FootballPlayer footballPlayer;
+        int sa;
+        do {
+            System.out.print("Nhập số áo: ");
+            sa = Integer.parseInt(sc.nextLine());
+            footballPlayer = checkNumberPlayer(sa,clubCode1);
+        } while (footballPlayer != null);
         f.setNumber(sa);
 
 
@@ -132,5 +138,16 @@ public class ListFootballPlayer {
         footballPlayerArrayList.sort(new SortFootball.SortFootballName());
         System.out.println("Sắp xếp thành công");
     }
-}
+
+    public FootballPlayer checkNumberPlayer(int numberPlayer, String club) {
+        for (FootballPlayer f : footballPlayerArrayList) {
+            if (f.getClub().getClubCode().equals(club) && f.getNumber()==numberPlayer) {
+                return f;
+                }
+            }
+        return null;
+        }
+
+    }
+
 
