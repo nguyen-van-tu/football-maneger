@@ -21,7 +21,7 @@ public class ListClub {
     }
 
     public ListClub() {
-        Club c1 = new Club("Barcalona","FCB","Tây Ban Nha","CampNou","Koeman");
+        Club c1 = new Club("Barcelona","FCB","Tây Ban Nha","CampNou","Xavi");
         Club c2 = new Club("Bayern Munich","BAY","Đức","Allianz","Hans-Dieter Flick");
         Club c3 = new Club("Liverpool","LIV","Anh","Anfield","Jürgen Klopp");
         Club c4 = new Club("Juventus","JUV","Italy","Juventus","Andrea Pirlo");
@@ -146,10 +146,10 @@ public class ListClub {
 
         int a = 0;
         System.out.println("Nhập mã clb cần tìm");
-        String id = sc.nextLine();
+        String name = sc.nextLine();
 
         for (int i = 0; i < clubArrayList.size(); i++) {
-            if (clubArrayList.get(i).getClubCode().equals(id)) {
+            if (clubArrayList.get(i).getName().contains(name)) {
 
                 System.out.println("CLB bạn cần tìm là:");
                 System.out.println(getClubArrayList().get(i).toString());

@@ -15,17 +15,18 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int input;
         do {
-            System.out.println("------------Menu--------------                                            ");
-            System.out.println("1: Thêm clb                   |                                           ");
-            System.out.println("2: Thêm cầu thủ               |            ^                ^                  ");
-            System.out.println("3: Thêm trận đấu              |         ^  @  ^          ^  @  ^                  ");
-            System.out.println("4: Hiển thị thông tin         |                     ^                      ");
-            System.out.println("5: Xóa clb                    |                    ^ ^                      ");
-            System.out.println("6: Sửa  clb                   |             ^              ^                 ");
-            System.out.println("7: Tìm kiếm                   |               ^         ^                     ");
-            System.out.println("8: Sắp xếp                    |                   ^  ^                         ");
-            System.out.println("9: Lưu thông tin vào file     |                                           ");
-            System.out.println("0: Thoát                      |                                           ");
+            System.out.println("------------Menu-------------- ");
+            System.out.println("1: Thêm clb                   |");
+            System.out.println("2: Thêm cầu thủ               |");
+            System.out.println("3: Thêm trận đấu              |");
+            System.out.println("4: Hiển thị thông tin         |");
+            System.out.println("5: Xóa clb                    |");
+            System.out.println("6: Sửa  clb                   |");
+            System.out.println("7: Tìm kiếm                   |");
+            System.out.println("8: Sắp xếp                    |");
+            System.out.println("9: Chuyển nhượng cầu thủ      |");
+            System.out.println("10: Lưu thông tin vào file    |");
+            System.out.println("0: Thoát                      |");
             System.out.println("-------------------------------");
             System.out.println("Mời chọn: ");
             input = Integer.parseInt(sc.nextLine());
@@ -52,7 +53,8 @@ public class Main {
                     do {
                         System.out.println("1: Hiển thị danh sách clb");
                         System.out.println("2: Hiển thị danh sách cầu thủ");
-                        System.out.println("3: Hiển thị thông tin trận đấu");
+                        System.out.println("3: Hiển thị danh sách theo CLB");
+                        System.out.println("4: Hiển thị thông tin trận đấu");
                         System.out.println("0: Quay lại");
                         switch (i) {
                             case 1:
@@ -64,6 +66,11 @@ public class Main {
                                 listFootballFlayer.showFootballFlayer();
                                 break;
                             case 3:
+                                System.out.println("Nhập tên clb:");
+                                String clubName = sc.nextLine();
+                                listFootballFlayer.showFootballFlayerByClub(clubName);
+                                break;
+                            case 4:
                                 System.out.println("Thông tin trận đấu");
                                 listMatch.showMatch();
                                 break;
@@ -136,6 +143,10 @@ public class Main {
                         }
                     } while (a != 0);
                 case 9:
+                    System.out.println("Nhập tên cầu thủ:");
+                    String name = sc.nextLine();
+                    listFootballFlayer.transferPlayer(name);
+                case 10:
                     w.writeFile(listClub, listFootballFlayer, listMatch);
                     break;
             }

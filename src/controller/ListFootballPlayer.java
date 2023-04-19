@@ -6,18 +6,20 @@ import model.FootballPlayer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ListFootballPlayer {
     Scanner sc = new Scanner(System.in);
     public ArrayList<FootballPlayer> footballPlayerArrayList = new ArrayList<>();
     ListClub listClub = new ListClub();
-    public ListFootballPlayer() {
-    }
 
     public ArrayList<FootballPlayer> getFootballPlayerArrayList() {
         return footballPlayerArrayList;
     }
+    public ListFootballPlayer() {
 
+    }
     public ListFootballPlayer(ListClub listClub) {
         FootballPlayer f1 = new FootballPlayer("Messi", 1987, "Argentina", listClub.findByCode("FCB"), "Tiền đạo", 10);
         FootballPlayer f2 = new FootballPlayer("De Jong", 1997, "Hà lan", listClub.findByCode("FCB"), "Tiền vệ", 21);
@@ -63,13 +65,13 @@ public class ListFootballPlayer {
         f.setLocation(hlv);
 
         FootballPlayer footballPlayer;
-        int sa;
+        int number;
         do {
             System.out.print("Nhập số áo: ");
-            sa = Integer.parseInt(sc.nextLine());
-            footballPlayer = checkNumberPlayer(sa,clubCode1);
-        } while (footballPlayer != null);
-        f.setNumber(sa);
+            number = Integer.parseInt(sc.nextLine());
+            footballPlayer = checkNumberPlayer(number,clubCode1);
+        } while (footballPlayer != null && number < 100 && number > 0);
+        f.setNumber(number);
 
 
         footballPlayerArrayList.add(f);
@@ -94,14 +96,28 @@ public class ListFootballPlayer {
         }
         System.out.println();
     }
+    public void showFootballFlayerByClub(String clubName) {
+        System.out.printf("Danh sách cầu thủ " + clubName);
+        System.out.printf("\n%-20s%-20s%-20s%-20s%-20s%-20s"
+                , "Cầu thủ"
+                , "Năm sinh"
+                , "Quốc gia"
+                , "Câu lạc bộ"
+                , "Vị trí"
+                , "Số áo");
 
-    public FootballPlayer findByNumber(int number) {
         for (FootballPlayer f : footballPlayerArrayList) {
-            if (f.getNumber() == number) {
-                return f;
+            if (f.getClub().getName().equals(clubName)){
+                System.out.printf("\n%-20s%-20s%-20s%-20s%-20s%-20s"
+                        , f.getName()
+                        , f.getYearofbirth()
+                        , f.getNationality()
+                        , f.getClub().getName()
+                        , f.getLocation()
+                        , f.getNumber());
             }
         }
-        return null;
+        System.out.println();
     }
 
     public void searchFootballPlayer() {
@@ -137,6 +153,34 @@ public class ListFootballPlayer {
     public void sortFootballPlayerName(){
         footballPlayerArrayList.sort(new SortFootball.SortFootballName());
         System.out.println("Sắp xếp thành công");
+    }
+    public void transferPlayer(String playerName){
+        Club club;
+        String newClub;
+        boolean check = false;
+        for (FootballPlayer f: footballPlayerArrayList) {
+            if (f.getName().equals(playerName)) {
+                do {
+                    System.out.println("Nhập clb chuyển đến");
+                    newClub = sc.nextLine();
+                    club = listClub.findByCode(newClub);
+                } while (club == null && f.getClub().getName().equals(newClub));
+                f.setClub(club);
+
+                FootballPlayer footballPlayer;
+                int number;
+                do {
+                    System.out.print("Nhập số áo: ");
+                    number = Integer.parseInt(sc.nextLine());
+                    footballPlayer = checkNumberPlayer(number,newClub);
+                } while (footballPlayer != null && number < 100 && number > 0);
+                f.setNumber(number);
+                check=true;
+            }
+        }
+        if (!check){
+            System.out.println("Không tìm thấy cầu thủ !");
+        }
     }
 
     public FootballPlayer checkNumberPlayer(int numberPlayer, String club) {
